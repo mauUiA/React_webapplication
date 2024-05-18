@@ -13,6 +13,8 @@ This repository contains a React application for visualizing sensor data. The ap
 4. [Styling](#styling)
 5. [Dependencies](#dependencies)
 
+## Installation dependencies and starting the server
+
 1. **Install dependencies:**
    ```bash
    npm install
