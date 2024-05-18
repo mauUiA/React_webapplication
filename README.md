@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Sensor Data Visualization Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React application for visualizing sensor data. The app fetches temperature, humidity, and battery level data from a server and displays the latest measurement as well as historical data.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Components](#components)
+   - [App.js](#appjs)
+   - [LastMeasurement.js](#lastmeasurementjs)
+   - [AllMeasurements.js](#allmeasurementsjs)
+4. [Styling](#styling)
+5. [Dependencies](#dependencies)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started with this application, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/sensor-data-visualization.git
+   cd sensor-data-visualization
+   ```
 
-### `npm test`
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+This will launch the application in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will automatically fetch sensor data from the server at regular intervals and display it in two main views:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Last Measurement:** Shows the most recent sensor readings, along with a time-series chart.
+2. **All Measurements:** Displays all the sensor data in a tabular format.
 
-### `npm run eject`
+### Available Routes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `/` - Displays the Last Measurement view.
+- `/all-measurements` - Displays all historical sensor data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### App.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The main component that sets up routing and fetches sensor data at regular intervals.
 
-## Learn More
+#### Key Features:
+- Fetches data from the server every 5 seconds.
+- Uses `react-router-dom` for client-side routing.
+- Passes fetched data to `LastMeasurement` and `AllMeasurements` components.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### LastMeasurement.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Displays the latest sensor data along with a time-series chart of temperature and humidity.
 
-### Code Splitting
+#### Key Features:
+- Uses `CanvasJS` to render the chart.
+- Displays the most recent sensor reading.
+- Provides a link to view all measurements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### AllMeasurements.js
 
-### Analyzing the Bundle Size
+Displays all the sensor data in a table format.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Key Features:
+- Iterates over the sensor data and displays each entry in a table row.
+- Provides a link to return to the Last Measurement view.
 
-### Making a Progressive Web App
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Custom CSS is used to style the components, ensuring a responsive and user-friendly interface.
 
-### Advanced Configuration
+### Key Styles:
+- `.sensor-stats` - Styles for the latest sensor data display.
+- `.graph-container` - Styles for the chart container.
+- `.view-all-measurements-btn` and `.back-to-home-btn` - Styles for navigation buttons.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Dependencies
 
-### Deployment
+- React: ^18.0.0
+- Axios: ^1.2.0
+- React Router DOM: ^6.4.0
+- CanvasJS: ^1.0.0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ensure you have these dependencies installed before running the application.
