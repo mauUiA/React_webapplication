@@ -13,22 +13,12 @@ This repository contains a React application for visualizing sensor data. The ap
 4. [Styling](#styling)
 5. [Dependencies](#dependencies)
 
-## Installation
-
-To get started with this application, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/sensor-data-visualization.git
-   cd sensor-data-visualization
-   ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Start the development server:**
+2. **Start the development server:**
    ```bash
    npm start
    ```
